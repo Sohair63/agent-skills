@@ -84,7 +84,7 @@ For anything bigger than small, write a short brief and get approval before writ
 7. What is explicitly out of scope.
 8. The expected PR footprint.
 
-Then build it in one complete pass and verify every case in the brief before calling it done.
+Then build it in one complete pass. Write it lean (`lean-code`, `code-clarity`), check every other path that reaches the changed code (`change-impact-check`), and run `done-verification` before calling it done.
 
 ## Not half built
 

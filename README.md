@@ -20,13 +20,17 @@ The script symlinks `CLAUDE.md` to `~/.claude/CLAUDE.md` and each folder in `ski
 | Skill | When it runs |
 | --- | --- |
 | `task-preflight` | Start of every task: end-to-end audit, product decisions settled up front, code and PR shape pre-designed |
+| `change-impact-check` | Changing shared code, and as the gate before a commit or PR |
+| `done-verification` | Before reporting work as done: existing data, lifecycle, rollout, roles, data shapes, presentation |
+| `branch-self-review` | On request or before pushing: independent reviewers, verify findings, fix P1 and P2 |
+| `lean-code` | Writing or reviewing code: same behaviour in fewer lines |
 | `system-design` | Choosing between materially different designs |
 | `code-clarity` | Writing or reviewing code: naming, consistency, no over-engineering |
 | `rails-model-naming` | Creating Rails models, tables and migrations |
 
 ## Project-specific skills
 
-Skills that depend on one codebase (for example Journey Tracker's `feature-architecture-audit`) stay in that repo's `.claude/skills/`. The global `task-preflight` tells the agent to run the project's own audit skill as well when there is one.
+Skills that depend on one codebase (for example Journey Tracker's `feature-architecture-audit` or `scenario-verification`) stay in that repo's `.claude/skills/`. Global skills use different names from project ones because personal skills take precedence over project skills with the same name; each global skill tells the agent to run the project's version as well when there is one.
 
 ## Adding a skill
 
