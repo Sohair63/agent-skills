@@ -30,7 +30,16 @@ Launch reviewer agents (the project's own reviewer agents if it has them, otherw
 
 When the diff touches anything a user sees (views, components, copy, validation or flash messages, emails), add a third reviewer that reads the flow from the user's side: states, forms, feedback, confirmations, mobile, accessibility, wording.
 
-The agents review; they do not edit. When two reports flag the same line for the same issue, keep one, at the higher severity.
+**Second opinion from Codex.** When you are Claude and `codex login status` reports a login, run Codex in the background alongside the agents. A different model misses different things, and Codex reviews against the project's `AGENTS.md`:
+
+```bash
+codex review --base <base>      # the branch's commits
+codex review --uncommitted      # only if the working tree has changes
+```
+
+If Codex is missing or not logged in, say so in the report and carry on without it.
+
+The agents and Codex review; they do not edit. When two reports flag the same line for the same issue, keep one, at the higher severity.
 
 ## 3. Verify before you act
 

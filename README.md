@@ -22,7 +22,7 @@ The script symlinks `CLAUDE.md` to `~/.claude/CLAUDE.md` and each folder in `ski
 | `task-preflight` | Start of every task: end-to-end audit, product decisions settled up front, code and PR shape pre-designed |
 | `change-impact-check` | Changing shared code, and as the gate before a commit or PR |
 | `done-verification` | Before reporting work as done: existing data, lifecycle, rollout, roles, data shapes, presentation |
-| `branch-self-review` | On request or before pushing: independent reviewers, verify findings, fix P1 and P2 |
+| `branch-self-review` | On request or before pushing: independent reviewers plus Codex, verify findings, fix P1 and P2 |
 | `lean-code` | Writing or reviewing code: same behaviour in fewer lines |
 | `system-design` | Choosing between materially different designs |
 | `code-clarity` | Writing or reviewing code: naming, consistency, no over-engineering |

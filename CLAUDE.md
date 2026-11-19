@@ -4,6 +4,14 @@
 
 Before planning or writing code for any task, load the `task-preflight` skill (`~/.claude/skills/task-preflight/SKILL.md`) and follow it. If the project has its own architecture or audit skill, run that one as well. Act as the system architect and senior reviewer on the change: understand it end to end, settle every product decision up front (infer from the code first, then ask everything else in one round), pre-think the code and the PR, then build it complete. Skip only for typos, copy-only edits, log lines and agent-config edits.
 
+## Audit before answering
+
+My findings get shared with the team and clients, so my first answer must be final: a re-audit should find nothing new.
+
+- Before answering, try to prove the answer wrong: the callers, data, roles and cases I have not checked, and what a senior reviewer would challenge.
+- Separate what I verified in the code, data or docs from what I inferred, and name what I did not check.
+- If a later check still finds something, say my first answer missed it and why.
+
 ## Before calling it done
 
 Before reporting a feature or fix as done, or handing it over for testing, run `change-impact-check` on shared code you changed and `done-verification`, and end the report with its axis table. Run `branch-self-review` only when I ask for it or say yes to pre-push checks.
@@ -15,6 +23,8 @@ When creating a database migration file, always use the actual current timestamp
 ## Client messages
 
 When Sohair forwards a message from a client, first decide whether it needs a reply, even a short acknowledgement, and draft that reply before anything else. Write replies in Sohair's voice, in the first person ("I"), not "we".
+
+Check every promise in a reply against the code, including existing data the fix will not repair. Answer the decision maker first and plainly, state calls instead of inviting debate, say what the client must do, and leave a timeline placeholder. Claim only what was checked; anything still open gets "I'm looking into this". No jargon, no dashes. Give the draft in a code block.
 
 Never start implementation while the conversation with the client is still open. Close it first (questions answered, direction confirmed, reply sent), then build. Settling things up front avoids rework and saves tokens.
 
